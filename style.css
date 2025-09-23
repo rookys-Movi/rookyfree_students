@@ -3,6 +3,27 @@ body {
     font-family: 'Noto Sans JP', sans-serif;
 }
 
+/* --- Theme Colors (CSS Variables) --- */
+:root {
+    --rf-green-600: #059669; /* emerald-600 */
+    --rf-green-500: #10b981; /* emerald-500 */
+    --rf-green-300: #6ee7b7; /* emerald-300 */
+    --rf-green-200: #a7f3d0; /* emerald-200 */
+}
+
+/* --- Subtle Green Waves Background on Sections (excludes footer) --- */
+main > section {
+    position: relative;
+    /* Layered gradients: two soft radial waves + a gentle diagonal wash */
+    background-image:
+        radial-gradient(1200px 220px at -10% 0%, rgba(16, 185, 129, 0.08) 0%, rgba(16, 185, 129, 0) 70%),
+        radial-gradient(1200px 220px at 110% 60%, rgba(5, 150, 105, 0.08) 0%, rgba(5, 150, 105, 0) 70%),
+        linear-gradient(135deg, rgba(167, 243, 208, 0.20), rgba(16, 185, 129, 0.10));
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-size: cover, cover, cover;
+    background-attachment: fixed, fixed, fixed; /* creates a subtle parallax effect */
+}
+
 /* --- Form Input Styles (Helper Classes) --- */
 .form-label {
     display: block;
@@ -23,7 +44,7 @@ body {
     outline: none;
     border-color: #10b981; /* border-emerald-500 */
     --tw-ring-color: rgba(16, 185, 129, 0.4);
-    box-shadow: 0 0 0 3px var(--tw-ring-color);
+    box-shadow:none;
 }
 
 /* --- FAQ Accordion --- */
