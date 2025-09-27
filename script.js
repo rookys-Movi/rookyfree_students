@@ -60,12 +60,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 companyName: dataObject.universityName,
                 email: dataObject.email,
                 message: dataObject.message || "",
-                // Add blank fields required by the sheet
                 furigana: "",
                 departmentName: "",
                 phoneNumber: "",
                 detailType: "",
-                // ✅ FIXED: Added the missing secret key for validation
                 secret: '8qZ$p#vT2@nK*wG7hB5!sF8aU'
             };
 
@@ -77,7 +75,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 body: JSON.stringify(payload)
             })
             .then(() => {
-                // Redirect to the LOCAL thank you page on success
                 window.top.location.href = 'thankyou.html';
             })
             .catch(error => {
