@@ -1,30 +1,17 @@
-/* --- Global Styles --- */
+/* --- Global Styles & New Color Palette --- */
+:root {
+    --color-green: #00a29a;
+    --color-yellow: #f5dc3d;
+    --color-blue: #6ac7e9;
+    --color-navy: #002835;
+}
+
 body {
     font-family: 'Noto Sans JP', sans-serif;
+    color: var(--color-navy);
 }
 
-/* --- Theme Colors (CSS Variables) --- */
-:root {
-    --rf-green-600: #059669; /* emerald-600 */
-    --rf-green-500: #10b981; /* emerald-500 */
-    --rf-green-300: #6ee7b7; /* emerald-300 */
-    --rf-green-200: #a7f3d0; /* emerald-200 */
-}
-
-/* --- Subtle Green Waves Background on Sections (excludes footer) --- */
-main > section {
-    position: relative;
-    /* Layered gradients: two soft radial waves + a gentle diagonal wash */
-    background-image:
-        radial-gradient(1200px 220px at -10% 0%, rgba(16, 185, 129, 0.08) 0%, rgba(16, 185, 129, 0) 70%),
-        radial-gradient(1200px 220px at 110% 60%, rgba(5, 150, 105, 0.08) 0%, rgba(5, 150, 105, 0) 70%),
-        linear-gradient(135deg, rgba(167, 243, 208, 0.20), rgba(16, 185, 129, 0.10));
-    background-repeat: no-repeat, no-repeat, no-repeat;
-    background-size: cover, cover, cover;
-    background-attachment: fixed, fixed, fixed; /* creates a subtle parallax effect */
-}
-
-/* --- Form Input Styles (Helper Classes) --- */
+/* --- Form Input Styles --- */
 .form-label {
     display: block;
     margin-bottom: 0.5rem;
@@ -35,34 +22,31 @@ main > section {
 .form-input {
     width: 100%;
     padding: 0.75rem 1rem;
-    border: 1px solid #d1d5db; /* border-gray-300 */
-    border-radius: 0.5rem; /* rounded-lg */
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
     transition: ring 0.2s, border-color 0.2s;
 }
 
 .form-input:focus {
     outline: none;
-    border-color: #10b981; /* border-emerald-500 */
-    --tw-ring-color: rgba(16, 185, 129, 0.4);
-    box-shadow:none;
+    border-color: var(--color-green);
+    box-shadow: 0 0 0 3px rgba(0, 162, 154, 0.3);
 }
 
 /* --- FAQ Accordion --- */
 .faq-item .faq-answer {
     max-height: 0;
+    overflow: hidden;
     transition: max-height 0.3s ease-out;
 }
-
 .faq-item.active .faq-answer {
-    max-height: 200px; /* Adjust as needed */
+    max-height: 200px;
     transition: max-height 0.4s ease-in;
 }
-
 .faq-item.active .faq-icon {
     transform: rotate(45deg);
-    transition: transform 0.3s ease-in-out;
 }
-
 .faq-item .faq-icon {
      transition: transform 0.3s ease-in-out;
 }
+
