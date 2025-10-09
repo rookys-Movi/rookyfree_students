@@ -4,11 +4,68 @@
     --color-yellow: #f5dc3d;
     --color-blue: #6ac7e9;
     --color-navy: #002835;
+    --color-red: #e84f33;
+    --bg-safe-top: 88px; /* slightly larger to avoid seam */
+    --bg-safe-bottom: 148px;
 }
 
 body {
     font-family: 'Noto Sans JP', sans-serif;
     color: var(--color-navy);
+}
+
+/* --- Global Background Image (behind all content) --- */
+html, body {
+    position: relative;
+}
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url('images/Rookyfree_LP_back.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* opacity: 0.30; subtle */
+    pointer-events: none; /* keep all content interactive */
+    z-index: 0;
+    /* Mask out header and footer zones so BG doesn't show there */
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        transparent 0,
+        transparent calc(var(--bg-safe-top) - 8px),
+        #fff var(--bg-safe-top),
+        #fff calc(100% - var(--bg-safe-bottom)),
+        transparent calc(100% - var(--bg-safe-bottom) + 8px),
+        transparent 100%
+    );
+    mask-image: linear-gradient(
+        to bottom,
+        transparent 0,
+        transparent calc(var(--bg-safe-top) - 8px),
+        #fff var(--bg-safe-top),
+        #fff calc(100% - var(--bg-safe-bottom)),
+        transparent calc(100% - var(--bg-safe-bottom) + 8px),
+        transparent 100%
+    );
+}
+
+/* --- Utility: solid white overlay blocker for sections --- */
+.bg-white-overlay {
+    position: relative;
+}
+.bg-white-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #ffffff;
+    z-index: 0;
 }
 
 /* --- Form Input Styles --- */
@@ -50,3 +107,21 @@ body {
      transition: transform 0.3s ease-in-out;
 }
 
+/* --- Step Flow Arrows --- */
+@media (min-width: 768px) { /* Apply only on md screens and up */
+    .step-flow > div:not(:last-child) {
+        position: relative;
+    }
+
+    .step-flow > div:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        top: 2rem; /* Vertically center with the circle */
+        right: -1.5rem; /* Position between cards */
+        width: 3rem; /* Width of the arrow area */
+        height: 2px;
+        background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23FFF' stroke-width='4' stroke-dasharray='6%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+        transform: translateY(-50%);
+        z-index: 10;
+    }
+}

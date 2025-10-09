@@ -6,7 +6,6 @@
     <title>Rooky Free 学生向け</title>
     <link rel="icon" type="image/png" href="images/rookyfavicon.png">
 
-
     <script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +16,6 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <!-- Custom Tailwind Config & Colors -->
     <script>
       tailwind.config = {
         theme: {
@@ -27,6 +25,7 @@
               'custom-yellow': '#f5dc3d',
               'custom-blue': '#6ac7e9',
               'custom-navy': '#002835',
+              'custom-red': '#e84f33',
             }
           }
         }
@@ -35,27 +34,29 @@
 </head>
 <body class="bg-white text-gray-800">
 
-    <!-- Header -->
-    <header class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
+    <header class="bg-custom-yellow/90 backdrop-blur-md sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
             <img src="images/rookyfree_logo.png" alt="Rooky Free Logo" class="h-10">
-            <a href="#form" class="bg-custom-yellow text-custom-navy font-bold py-2 px-6 rounded-full hover:opacity-90 transition-opacity">
-                無料で登録する
+            <a href="#form" class="bg-custom-green text-white font-bold py-2 px-6 rounded-full hover:opacity-90 transition-opacity">
+                資料申し込み
             </a>
         </nav>
     </header>
 
     <main>
 
-        <!-- Hero Section -->
-        <section class="py-20 md:py-28 text-center bg-custom-yellow">
+        <section class="py-20 md:py-28 text-center bg-custom-white relative z-10 overflow-hidden bg-white-overlay">
             <div class="container mx-auto px-6">
                 <h1 class="text-4xl md:text-5xl font-black text-custom-navy leading-tight" data-aos="fade-up">
-                    学校も遊びも、そしてバイトも。<br>寮生活の“今”に合った仕事を見つけよう！
+                    学校も遊びも、そしてバイトも。<br>寮生活の<span class="text-custom-red">“今”</span>に合った仕事を見つけよう！
                 </h1>
                 <p class="mt-6 text-lg text-custom-navy max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-                    学生寮特化型フリーペーパー＆アプリ『Rooky Free』で、あなたにぴったりのバイトがすぐ見つかる。
+                    学生寮特化型フリーペーパー＆アプリ<img src="images/rookyfree_logo.png" alt="Rooky Free" class="inline-block align-middle h-8 md:h-10 mx-2" /> で、<br>あなたにぴったりのバイトがすぐ見つかる。
                 </p>
+                <div class="mt-8" data-aos="fade-up" data-aos-delay="150">
+                    <div class="bg-white h-40 md:h-64 flex items-center justify-center text-gray-500 rounded-lg max-w-4xl mx-auto">
+                        <img src="images/students_top.webp" alt="Rooky Free Students" class="h-full rounded-lg bg-white">
+                </div>
                 <div class="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4" data-aos="fade-up" data-aos-delay="200">
                     <a href="#form" class="bg-custom-green text-white font-bold text-lg py-3 px-8 rounded-full hover:opacity-90 transition-transform hover:scale-105 shadow-none w-full sm:w-auto">
                         バイト情報を今すぐチェック (無料)
@@ -67,134 +68,155 @@
             </div>
         </section>
 
-        <!-- Problem Section -->
-        <section class="py-20">
+        <section class="py-20 relative">
+            <div class="absolute bottom-0 left-0 w-full h-32" style="z-index: -1;">
+                <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full" preserveAspectRatio="none">
+                    <path d="M1440 120H0V26.2205C159.333 3.30321 443.3 -18.0556 722 41.2205C1000.7 100.496 1280.67 92.4965 1440 68.2205V120Z" fill="#F5DC3D"/>
+                </svg>
+            </div>
             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl font-bold mb-12" data-aos="fade-up">こんなバイト探しの悩み、ありませんか？</h2>
-                <div class="grid md:grid-cols-5 gap-8">
+                <h2 class="text-3xl font-bold mb-12 text-custom-navy" data-aos="fade-up">こんなバイト探しの悩み、ありませんか？</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8">
                     <div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="100">
-                        <div class="bg-custom-green/10 rounded-full p-4 mb-4">
-                            <!-- Icon Placeholder -->
-                            <svg class="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        <div class="bg-cyan-100 rounded-full p-4 mb-4 border-2 border-dashed border-cyan-400">
+                            <svg class="w-8 h-8 text-custom-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
                         </div>
-                        <p class="font-semibold text-center">忙しくて毎日サイトをチェックできない</p>
+                        <p class="font-semibold text-center text-custom-navy">忙しくて毎日サイトをチェックできない</p>
                     </div>
                     <div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="200">
-                        <div class="bg-custom-green/10 rounded-full p-4 mb-4">
-                            <svg class="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        <div class="bg-cyan-100 rounded-full p-4 mb-4 border-2 border-dashed border-cyan-400">
+                           <svg class="w-8 h-8 text-custom-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                         </div>
-                        <p class="font-semibold text-center">学校から遠い職場は通うのが大変</p>
+                        <p class="font-semibold text-center text-custom-navy">学校から遠い職場は通うのが大変</p>
                     </div>
                     <div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="300">
-                        <div class="bg-custom-green/10 rounded-full p-4 mb-4">
-                            <svg class="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        <div class="bg-cyan-100 rounded-full p-4 mb-4 border-2 border-dashed border-cyan-400">
+                           <svg class="w-8 h-8 text-custom-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
                         </div>
-                        <p class="font-semibold text-center">交通費でバイト代が減ってしまう</p>
+                        <p class="font-semibold text-center text-custom-navy">交通費でバイト代が減ってしまう</p>
                     </div>
-                     <div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="400">
-                        <div class="bg-custom-green/10 rounded-full p-4 mb-4">
-                           <svg class="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="400">
+                        <div class="bg-cyan-100 rounded-full p-4 mb-4 border-2 border-dashed border-cyan-400">
+                           <svg class="w-8 h-8 text-custom-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                         </div>
-                        <p class="font-semibold text-center">学業と両立できる時間帯が見つからない</p>
+                        <p class="font-semibold text-center text-custom-navy">学業と両立できる時間帯が見つからない</p>
                     </div>
-                     <div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="500">
-                        <div class="bg-custom-green/10 rounded-full p-4 mb-4">
-                           <svg class="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="500">
+                        <div class="bg-cyan-100 rounded-full p-4 mb-4 border-2 border-dashed border-cyan-400">
+                           <svg class="w-8 h-8 text-custom-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                         </div>
-                        <p class="font-semibold text-center">面接に行っても条件が合わずガッカリ</p>
+                        <p class="font-semibold text-center text-custom-navy">面接に行っても条件が合わずガッカリ</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Solution Section -->
-        <section class="py-20 bg-custom-green text-white">
+
+        <section class="py-20 bg-custom-white text-custom-navy">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl font-bold" data-aos="fade-up">寮生だからこそ選べる、<br>近くて働きやすいバイトがここに</h2>
                 </div>
                 <div class="flex flex-col md:flex-row items-center gap-12 mb-16" data-aos="fade-right">
                     <div class="md:w-1/2">
-                        <div class="bg-white/20 rounded-lg p-8 h-64 flex items-center justify-center text-white/50 font-bold text-2xl">
-                           [Image Placeholder]
+                        <div class="bg-white rounded-lg p-8 h-80 flex items-center justify-center text-gray-500 font-bold text-2xl">
+                           <img src="images/1.webp" alt="Rooky Free Students" class="h-full rounded-lg bg-white">
                         </div>
                     </div>
                     <div class="md:w-1/2">
-                        <h3 class="text-2xl font-bold text-custom-yellow mb-3">入居時の部屋に配布</h3>
-                        <p>新生活スタートと同時に最新の求人情報が手元に！</p>
+                        <h3 class="text-3xl font-bold text-custom-red mb-3">入居時の部屋に配布</h3>
+                        <p class="text-lg font-bold">新生活スタートと同時に最新の求人情報が手元に！</p>
                     </div>
                 </div>
                 <div class="flex flex-col md:flex-row-reverse items-center gap-12 mb-16" data-aos="fade-left">
                     <div class="md:w-1/2">
-                         <div class="bg-white/20 rounded-lg p-8 h-64 flex items-center justify-center text-white/50 font-bold text-2xl">
-                           [Image Placeholder]
+                         <div class="bg-white rounded-lg p-8 h-80 flex items-center justify-center text-gray-500 font-bold text-2xl">
+                            <img src="images/2.webp" alt="Rooky Free Students" class="h-full rounded-lg bg-white">                        
                         </div>
                     </div>
                     <div class="md:w-1/2">
-                        <h3 class="text-2xl font-bold text-custom-yellow mb-3">食堂・受付に常設</h3>
-                        <p>毎日通る場所で気軽に求人をチェックできます。</p>
+                        <h3 class="text-3xl font-bold text-custom-red mb-3">食堂・受付に常設</h3>
+                        <p class="text-lg font-bold">毎日通る場所で気軽に求人をチェックできます。</p>
                     </div>
                 </div>
                  <div class="flex flex-col md:flex-row items-center gap-12" data-aos="fade-right">
                     <div class="md:w-1/2">
-                         <div class="bg-white/20 rounded-lg p-8 h-64 flex items-center justify-center text-white/50 font-bold text-2xl">
-                           [Image Placeholder]
+                         <div class="bg-white rounded-lg p-8 h-80 flex items-center justify-center text-gray-500 font-bold text-2xl">
+                            <img src="images/3.webp" alt="Rooky Free Students" class="h-full rounded-lg bg-white">                        
                         </div>
                     </div>
                     <div class="md:w-1/2">
-                        <h3 class="text-2xl font-bold text-custom-yellow mb-3">寮生専用アプリ配信</h3>
-                        <p>スマホ通知で新着情報をキャッチし、ワンクリックで企業の詳細ページへ。</p>
+                        <h3 class="text-3xl font-bold text-custom-red mb-3">寮生専用アプリ配信</h3>
+                        <p class="text-lg font-bold">スマホ通知で新着情報をキャッチし、<br>ワンクリックで企業の詳細ページへ。</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Benefits Grid -->
-        <section class="py-20 bg-custom-yellow">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl font-bold mb-12 text-custom-navy" data-aos="fade-up">Rooky Freeだけの特別メリット</h2>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-green-500 p-6 rounded-lg" data-aos="fade-up" data-aos-delay="100">
-                        <h3 class="text-xl font-bold text-custom-yellow mb-2">家から近い！</h3>
-                        <p class="font-bold text-custom-black">通学やサークル帰りにそのままバイトへ行ける。</p>
+        <section class="py-20 bg-custom-yellow relative">
+            <div class="container mx-auto px-6 text-center relative z-10">
+                <h2 class="text-3xl font-bold mb-12 text-custom-navy" data-aos="fade-up"><img src="images/rookyfree_logo.png" alt="Rooky Free" class="inline-block align-middle h-8 md:h-10 mx-2" />だけの特別メリット</h2>
+                <div class="space-y-6 max-w-3xl mx-auto">
+                    <div class="bg-custom-blue p-6 rounded-lg text-white" data-aos="fade-up" data-aos-delay="100">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-left">
+                            <h3 class="text-xl font-bold text-custom-red md:w-1/3">家から近い！</h3>
+                            <p class="font-semibold md:w-2/3">通学やサークル帰りにそのままバイトへ行ける。</p>
+                        </div>
                     </div>
-                    <div class="bg-green-500 p-6 rounded-lg" data-aos="fade-up" data-aos-delay="200">
-                        <h3 class="text-xl font-bold text-custom-yellow mb-2">交通費ゼロ！</h3>
-                        <p class="font-bold text-custom-black">稼いだお金は自分のために有効活用できる。</p>
+                    <div class="bg-custom-blue p-6 rounded-lg text-white" data-aos="fade-up" data-aos-delay="200">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-left">
+                            <h3 class="text-xl font-bold text-custom-red md:w-1/3">交通費ゼロ！</h3>
+                            <p class="font-semibold md:w-2/3">稼いだお金は自分のために有効活用できる。</p>
+                        </div>
                     </div>
-                    <div class="bg-green-500 p-6 rounded-lg" data-aos="fade-up" data-aos-delay="300">
-                        <h3 class="text-xl font-bold text-custom-yellow mb-2">働きやすいシフト</h3>
-                        <p class="font-bold text-custom-black">学業や部活と両立できる時間帯の求人が多い。</p>
+                    <div class="bg-custom-blue p-6 rounded-lg text-white" data-aos="fade-up" data-aos-delay="300">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-left">
+                            <h3 class="text-xl font-bold text-custom-red md:w-1/3">働きやすいシフト</h3>
+                            <p class="font-semibold md:w-2/3">学業や部活と両立できる時間帯の求人が多い。</p>
+                        </div>
                     </div>
-                    <div class="bg-green-500 p-6 rounded-lg" data-aos="fade-up" data-aos-delay="400">
-                        <h3 class="text-xl font-bold text-custom-yellow mb-2">安心感</h3>
-                        <p class="font-bold text-custom-black">同じ寮や近所の先輩も働いている職場が多い。</p>
+                    <div class="bg-custom-blue p-6 rounded-lg text-white" data-aos="fade-up" data-aos-delay="400">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-left">
+                            <h3 class="text-xl font-bold text-custom-red md:w-1/3">安心感</h3>
+                            <p class="font-semibold md:w-2/3">同じ寮や近所の先輩も働いている職場が多い。</p>
+                        </div>
                     </div>
-                    <div class="bg-green-500 p-6 rounded-lg" data-aos="fade-up" data-aos-delay="500">
-                        <h3 class="text-xl font-bold text-custom-yellow mb-2">企業からの還元制度</h3>
-                        <p class="font-bold text-custom-black">協賛金の一部を寮の設備充実に活用！</p>
+                    <div class="bg-custom-blue p-6 rounded-lg text-white" data-aos="fade-up" data-aos-delay="500">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-left">
+                            <h3 class="text-xl font-bold text-custom-red md:w-1/3">企業からの還元制度</h3>
+                            <p class="font-semibold md:w-2/3">協賛金の一部を寮の設備充実に活用！</p>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="absolute top-0 left-0 w-full h-32" style="z-index: 0;">
+                <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full" preserveAspectRatio="none">
+                    <path d="M0 0H1440V93.7795C1280.67 116.697 1000.7 138.056 722 78.7795C443.3 19.5035 159.333 27.5035 0 51.7795V0Z" fill="#00A29A"/>
+                </svg>
+            </div>
         </section>
         
-        <!-- Step-by-step Flow Section -->
-        <section class="py-20">
-             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl font-bold mb-12" data-aos="fade-up">カンタン3ステップで応募完了</h2>
-                <div class="grid md:grid-cols-3 gap-12 relative">
+        <section class="py-20 bg-custom-red text-white relative overflow-hidden">
+             <div class="absolute top-0 left-0 w-full h-32" style="z-index: 0;">
+                <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full" preserveAspectRatio="none">
+                    <path d="M0 0H1440V93.7795C1280.67 116.697 1000.7 138.056 722 78.7795C443.3 19.5035 159.333 27.5035 0 51.7795V0Z" fill="#F5DC3D"/>
+                </svg>
+            </div>
+             <div class="container mx-auto px-6 text-center relative z-10">
+                <h2 class="text-3xl font-bold mb-16" data-aos="fade-up">簡単3ステップで応募完了</h2>
+                <div class="grid md:grid-cols-3 gap-x-12 gap-y-16 relative step-flow">
                     <div class="text-center" data-aos="fade-up" data-aos-delay="100">
-                        <div class="bg-custom-green/20 text-custom-green font-black text-2xl w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">1</div>
+                        <div class="bg-white text-custom-red font-black text-2xl w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">1</div>
                         <h3 class="text-xl font-bold mb-2">見つける</h3>
                         <p>部屋や食堂にある冊子・アプリで気になる求人を探す。</p>
                     </div>
                     <div class="text-center" data-aos="fade-up" data-aos-delay="200">
-                         <div class="bg-custom-green/20 text-custom-green font-black text-2xl w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">2</div>
+                         <div class="bg-white text-custom-red font-black text-2xl w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">2</div>
                         <h3 class="text-xl font-bold mb-2">確認する</h3>
                         <p>WEBリンクから企業の詳細ページで条件をじっくり確認。</p>
                     </div>
                     <div class="text-center" data-aos="fade-up" data-aos-delay="300">
-                         <div class="bg-custom-green/20 text-custom-green font-black text-2xl w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">3</div>
+                         <div class="bg-white text-custom-red font-black text-2xl w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">3</div>
                         <h3 class="text-xl font-bold mb-2">応募する</h3>
                         <p>自分に合っていたら、そのままWEBから簡単応募！</p>
                     </div>
@@ -202,7 +224,6 @@
              </div>
         </section>
         
-        <!-- FAQ Section -->
         <section class="py-20 bg-gray-50">
             <div class="container mx-auto px-6 max-w-3xl">
                 <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">よくある質問</h2>
@@ -238,14 +259,13 @@
             </div>
         </section>
         
-        <!-- Contact Form Section -->
         <section id="form" class="py-20 bg-white">
             <div class="container mx-auto px-6 max-w-2xl">
                 <div class="text-center" data-aos="fade-up">
                     <h2 class="text-3xl font-bold">お問い合わせ・求人登録</h2>
                     <p class="mt-4 text-gray-700">気になる求人の保存や応募、新着情報を受け取るには、下記フォームよりご登録ください。</p>
                 </div>
-                <form id="inquiryForm" class="mt-10 bg-white p-8 rounded-lg shadow-none space-y-6 border-2 border-gray-100" data-aos="fade-up" data-aos-delay="100">
+                <form id="inquiryForm" class="mt-10 bg-white p-8 rounded-lg shadow-none space-y-6 border border-gray-100" data-aos="fade-up" data-aos-delay="100">
                     <input type="hidden" name="landingPageID" value="RookyFree_学生">
                     
                     <div>
@@ -274,7 +294,6 @@
 
     </main>
 
-    <!-- Footer -->
     <footer class="bg-custom-navy text-white">
         <div class="container mx-auto px-6 py-8 text-center">
             <p class="font-semibold"><a href="https://rookyworks.jp/" class="hover:text-custom-blue transition" target="_blank">ルーキーワークス株式会社</a></p>
@@ -286,9 +305,8 @@
         </div>
     </footer>
 
-    <!-- AOS JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- Custom Script -->
+        <!--            <p>© 2015 Michał Sajnóg. Released under the <a href="https://github.com/michalsnik/aos?tab=MIT-1-ov-file#readme" target="_blank">MIT License</a>.</p>-->
     <script src="script.js"></script>
 </body>
 </html>
