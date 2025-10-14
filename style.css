@@ -14,43 +14,27 @@ body {
     color: var(--color-navy);
 }
 
-/* --- Global Background Image (behind all content) --- */
+/* Prevent horizontal scroll */
 html, body {
-    position: relative;
+    overflow-x: hidden;
 }
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+
+/* --- Background Wrappers --- */
+.top-wrapper {
+    background-color: white;
+}
+
+.bottom-wrapper {
     background-image: url('images/Rookyfree_LP_back.webp');
+    background-color: #f8fafc; /* Fallback color */
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    /* opacity: 0.30; subtle */
-    pointer-events: none; /* keep all content interactive */
-    z-index: 0;
-    /* Mask out header and footer zones so BG doesn't show there */
-    -webkit-mask-image: linear-gradient(
-        to bottom,
-        transparent 0,
-        transparent calc(var(--bg-safe-top) - 8px),
-        #fff var(--bg-safe-top),
-        #fff calc(100% - var(--bg-safe-bottom)),
-        transparent calc(100% - var(--bg-safe-bottom) + 8px),
-        transparent 100%
-    );
-    mask-image: linear-gradient(
-        to bottom,
-        transparent 0,
-        transparent calc(var(--bg-safe-top) - 8px),
-        #fff var(--bg-safe-top),
-        #fff calc(100% - var(--bg-safe-bottom)),
-        transparent calc(100% - var(--bg-safe-bottom) + 8px),
-        transparent 100%
-    );
+    background-attachment: fixed; /* Creates a nice parallax effect */
+}
+
+/* Make sections inside wrappers transparent to show the wrapper's background */
+main > div > section {
+    background-color: transparent !important;
 }
 
 /* --- Utility: solid white overlay blocker for sections --- */
@@ -66,6 +50,56 @@ body::before {
     left: 0;
     background: #ffffff;
     z-index: 0;
+}
+
+/* --- Section Dividers --- */
+/* Yellow glow that crosses container and divides the section horizontally */
+.glow-divider {
+    position: relative;
+}
+.glow-divider::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50%;
+    width: 100vw; /* extend to viewport width without causing overflow */
+    height: 4px;
+    background: radial-gradient(closest-side, rgba(245, 220, 61, 0.9), rgba(245, 220, 61, 0.45) 35%, rgba(245, 220, 61, 0.1) 70%, rgba(245, 220, 61, 0) 100%);
+    filter: blur(2px);
+    pointer-events: none;
+}
+
+/* Thin yellow line at the bottom edge of a section */
+.bottom-yellow-line {
+    position: relative;
+}
+.bottom-yellow-line::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 100vw;
+    height: 12px;
+    background-color: var(--color-yellow);
+    box-shadow: 0 0 12px rgba(245, 220, 61, 0.75);
+}
+
+/* Thin yellow line at the top edge of a section */
+.top-yellow-line {
+    position: relative;
+}
+.top-yellow-line::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    width: 100vw;
+    height: 12px;
+    background-color: var(--color-yellow);
+    box-shadow: 0 0 12px rgba(245, 220, 61, 0.75);
 }
 
 /* --- Form Input Styles --- */
@@ -88,6 +122,11 @@ body::before {
     outline: none;
     border-color: var(--color-green);
     box-shadow: 0 0 0 3px rgba(0, 162, 154, 0.3);
+}
+
+/* --- Utilities --- */
+.text-justify {
+    text-align: justify;
 }
 
 /* --- FAQ Accordion --- */
